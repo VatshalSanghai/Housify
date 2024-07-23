@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+<div class="col-8 offset-2"><br>
+    <h3>Update Your Listings</h3> <br>
+    <form action="/listings/<%= d1._id %>/update?_method=put" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div>
+            <label for="title" class="form-label">Title</label>
+             <input name="listing[title]" type="text" placeholder="Title" value="<%= d1.title %>" class="form-control" required> <br>
+        </div>
+        <div>
+            <label for="description" class="form-label">Description</label>
+              <textarea name="listing[description]" id="" placeholder="Description" class="form-control" required><%= d1.description %></textarea><br>
+        </div>
+         <div>
+            <label for="image" class="form-label">Upload New Image</label>
+              <input type="file" name="listing[image]" class="form-control" ><br>
+        </div>
+        <div class="row">
+        <div class="col-md-4">
+            <label for="price" class="form-label">Price</label>
+             <input name="listing[price]" type="number" placeholder="price"  value="<%= d1.price %>" class="form-control" required><br>
+        </div>
+        <div class="col-md-8">
+            <label for="country" class="form-label">Country</label>
+              <input type="text" name="listing[country]" placeholder="country"  value="<%= d1.country %>" class="form-control" required><br>
+        </div>
+    </div>
+        <div>
+            <label for="location" class="form-label">Location</label>
+               <input type="text" name="listing[location]" placeholder="location" value="<%= d1.location %>" class="form-control" required><br>
+        </div>
+       
+      
+        <button class="btn btn-dark update-btn">Update</button><br><br>
+</form>
+</div></div>
